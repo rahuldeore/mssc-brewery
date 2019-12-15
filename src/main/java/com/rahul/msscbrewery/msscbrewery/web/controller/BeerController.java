@@ -34,5 +34,16 @@ public class BeerController {
         httpHeaders.add("Location", "/beer/api/v1/beer/" + newBeer.getId().toString());
         return new ResponseEntity(newBeer, httpHeaders, HttpStatus.CREATED);
     }
-    //Test after GPG setup 3
+
+    @PutMapping("/beers/{beerId}")
+    public ResponseEntity handlePut(@PathVariable("beerId") UUID beerId, BeerDto beerDto) {
+        beerService.updateBeer(beerId, beerDto);
+        return new ResponseEntity(HttpStatus.NO_CONTENT);
+    }
+
+    @DeleteMapping ("/beers/{beerId}")
+    public ResponseEntity handleDelete(@PathVariable("beerId") UUID beerId) {
+        beerService.deleteById(beerId);
+        return new ResponseEntity(HttpStatus.NO_CONTENT);
+    }
 }
