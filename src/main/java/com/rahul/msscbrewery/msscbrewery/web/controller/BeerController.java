@@ -34,5 +34,5 @@ public class BeerController {
         httpHeaders.add("Location", "/beer/api/v1/beer/" + newBeer.getId().toString());
         return new ResponseEntity(newBeer, httpHeaders, HttpStatus.CREATED);
     }
-    //Test after GPG setup
+    //Test after GPG setup 2
 }
