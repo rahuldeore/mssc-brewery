@@ -14,7 +14,7 @@ public class BeerServiceImpl implements BeerService {
     public BeerDto getBeerById(UUID beerId) {
         return BeerDto.builder().id(beerId)
                 .beerName("PaulAner")
-                .beerStyle("HefeWizen")
+                .beerStyle("HefeWeizen")
                 .build();
     }
 
